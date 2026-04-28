@@ -33,7 +33,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
-    <link rel="icon" href="img/shortCut.png" type="image/png">
+<link rel="icon" href="img/shortCut.png" type="image/png">
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -142,9 +142,10 @@
       border-bottom: 2px solid #1e293b;
     }
 
-    #btnOrcamentoTablet {
-        display: block!important;
-      }  
+#btnOrcamentoTablet {
+        display: inline-block;
+      }
+
 
 
     @media(min-width: 768px) {
@@ -156,13 +157,13 @@
     @media(min-width:1024px) {
       #logoNome {
         padding-left: 30px;
-        font-size: 1.5rem !important;
+font-size: 1.5rem !important;
       }
 
       #btnOrcamentoTablet {
-        display: block;}
+        display: inline-block;
+      }
     }
-      
   </style>
 </head>
 
@@ -176,9 +177,8 @@
     class="flex justify-between items-center h-20 px-6 w-full z-50 bg-opacity-95 backdrop-blur-sm bg-slate-50 dark:bg-slate-950 fixed top-0 w-full border-b-2 border-slate-800 dark:border-slate-700">
 
     <div class="text-1xl font-black tracking-[0.2em] text-slate-900 dark:text-white"><a href="#topo" id="logoNome">ALÊ
-        CRILL tintas </a></div>      
-    </div>
-     
+        CRILL tintas </a></div>
+ 
     <div class="hidden md:flex items-center space-x-10">
 <a class="font-inter tracking-tighter uppercase font-bold text-sm text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 pb-1"
                                 href="#topo">INICIO</a>
@@ -189,10 +189,11 @@
       <a class="font-['Inter'] uppercase tracking-widest text-sm font-bold text-slate-600 dark:text-slate-400 hover:text-orange-500 transition-all duration-150"
         href="produtos.html">Produtos</a>
       
-
-      <button class="bg-primary text-on-primary px-6 py-2 font-inter tracking-tighter uppercase font-bold text-sm hover:bg-slate-800 transition-all active:translate-y-[1px]"
+   </div>
+<button class="bg-primary text-on-primary px-6 py-2 font-inter tracking-tighter uppercase font-bold text-sm hover:bg-slate-800 transition-all active:translate-y-[1px]"
                         id="btnOrcamentoTablet"> <a href="https://wa.me/55011997734189" target="_blank"
-                                rel="noopener noreferrer">AMOSTRA</a> </button>
+                                rel="noopener noreferrer"> AMOSTRA</a> </button>
+      
 
 
     </div>
