@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#301400",
+                        "on-background": "#181c1e",
+                        "surface-container": "#ebeef0",
+                        "tertiary-container": "#2a3846",
+                        "secondary-fixed-dim": "#ffb783",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed": "#d6e4f7",
+                        "outline": "#75777d",
+                        "inverse-surface": "#2d3133",
+                        "tertiary-fixed-dim": "#bac8da",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eef1f3",
+                        "surface": "#f7fafc",
+                        "on-primary-fixed": "#121c2c",
+                        "on-primary-container": "#96a0b5",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c5c6cd",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#0f1d2a",
+                        "primary-fixed": "#d9e3f9",
+                        "on-secondary-container": "#6b3500",
+                        "on-tertiary-container": "#93a1b3",
+                        "surface-dim": "#d7dadc",
+                        "secondary": "#944b00",
+                        "tertiary": "#152230",
+                        "background": "#f7fafc",
+                        "primary-fixed-dim": "#bdc7dc",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-container": "#fe9743",
+                        "surface-container-high": "#e5e9eb",
+                        "primary-container": "#2d3748",
+                        "on-primary-fixed-variant": "#3d4759",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#703700",
+                        "surface-container-low": "#f1f4f6",
+                        "on-surface-variant": "#45474c",
+                        "on-tertiary-fixed-variant": "#3b4857",
+                        "secondary-fixed": "#ffdcc5",
+                        "on-surface": "#181c1e",
+                        "inverse-primary": "#bdc7dc",
+                        "surface-bright": "#f7fafc",
+                        "on-primary": "#ffffff",
+                        "primary": "#182232",
+                        "surface-tint": "#555f71"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "technical-data": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "technical-data": ["14px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        @media(min-width:768px) {
+            #btnAmostra {
+                display: none;
+            }
+
+            #header-catalogo {
+                padding-left: 0px !important;
+            }
+
+            #logoNome {
+                
+                padding-left: 10px;
+
+            }
+        }
+
+            @media(min-width:1024px) {
+                #btnAmostra {
+                    display: block;
+                }
+
+
+                #logoNome {
+                    padding-left: 40px;
+                    font-size: 1.5rem !important;
+                }
+
+           
+
+            #header-catalogo {
+                padding-left: 40px !important;
+            }
+            }
+        
+    </style>
+</head>
+
+<body class="font-body-md text-on-background bg-background min-h-screen flex flex-col" id="topo">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#F7FAFC] border-b-2 border-slate-700 flex justify-between items-center px-3 h-20 w-full">
+        <div class="text-1xl font-black tracking-[0.2em] text-slate-900 dark:text-white"><a href="#topo"
+                id="logoNome">ALÊ CRILL tintas</a></div>
+        <div class="hidden md:flex gap-8">
+            <a class="font-['Inter'] uppercase tracking-[0.1em] text-sm font-bold text-slate-600 hover:text-[#ED8936] transition-colors duration-200 active:translate-y-[1px]"
+                href="index.html">Inicio</a>
+            <a class="font-['Inter'] uppercase tracking-[0.1em] text-sm font-bold text-[#ED8936] border-b-2 border-[#ED8936] pb-1 hover:text-[#ED8936] transition-colors duration-200 active:translate-y-[1px]"
+                href="#">Produtos</a>
+            <a class="font-['Inter'] uppercase tracking-[0.1em] text-sm font-bold text-slate-600 hover:text-[#ED8936] transition-colors duration-200 active:translate-y-[1px]"
+                href="index.html#sobre">Sobre</a>
+           
+        </div>
+        <button
+            class="bg-[#ED8936] text-white px-6 py-2 font-['Inter'] uppercase tracking-[0.1em] text-sm font-bold hover:opacity-90 transition-opacity active:translate-y-[1px]"
+            id="btnAmostra">
+            <a href="https://wa.me/55011997734189" target="_blank" rel="noopener noreferrer"> Amostra Grátis</a>
+        </button>
+    </nav>
+    <main class="mt-20 flex-grow">
+        <!-- Product Header -->
+        <header class="py-24 px-3 bg-primary-container text-white border-b-2 border-slate-700">
+            <div class="max-w-8xl mx-auto" id="header-catalogo">
+                <span class="font-label-caps text-label-caps text-secondary-container mb-4 block uppercase">Engenharia
+                    de Superfícies</span>
+                <h1 class="font-headline-xl text-headline-xl mb-3">Nosso Catálogo de Revestimentos</h1>
+                <p class="font-body-lg text-body-lg text-on-primary-container max-w-2xl">
+                    Excelência técnica em texturas industriais. Desenvolvemos acabamentos de alta performance para
+                    arquitetura moderna, garantindo durabilidade e estética superior.
+                </p>
+            </div>
+        </header>
+        <!-- Main Content Area: Sidebar + Grid -->
+        <div class="max-w-7xl mx-auto px-3 py-12 flex flex-col md:flex-row gap-12">
+            <!-- Filter Sidebar -->
+            <aside class="w-full md:w-32 flex-shrink-0">
+                <div class="sticky top-32 space-y-8">
+                    <div>
+                        <h3
+                            class="font-label-caps text-label-caps text-on-surface mb-4 uppercase border-b border-outline-variant pb-2">
+                            Aplicação</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="w-4 h-4 border-2 border-primary-container rounded-none text-secondary focus:ring-0"
+                                    type="checkbox" />
+                                <span
+                                    class="font-technical-data text-technical-data group-hover:text-secondary transition-colors">Interno</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="w-4 h-4 border-2 border-primary-container rounded-none text-secondary focus:ring-0"
+                                    type="checkbox" />
+                                <span
+                                    class="font-technical-data text-technical-data group-hover:text-secondary transition-colors">Externo</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-label-caps text-label-caps text-on-surface mb-4 uppercase border-b border-outline-variant pb-2">
+                            Acabamento</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="w-4 h-4 border-2 border-primary-container rounded-full text-secondary focus:ring-0"
+                                    name="finish" type="radio" />
+                                <span
+                                    class="font-technical-data text-technical-data group-hover:text-secondary transition-colors">Fosco
+                                    (Matte)</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input
+                                    class="w-4 h-4 border-2 border-primary-container rounded-full text-secondary focus:ring-0"
+                                    name="finish" type="radio" />
+                                <span
+                                    class="font-technical-data text-technical-data group-hover:text-secondary transition-colors">Brilhante
+                                    (Glossy)</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3
+                            class="font-label-caps text-label-caps text-on-surface mb-4 uppercase border-b border-outline-variant pb-2">
+                            Família de Textura</h3>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div class="aspect-square bg-slate-200 border border-outline-variant hover:border-secondary transition-all cursor-pointer"
+                                title="Mineral">
+                                <div class="w-full h-full bg-gradient-to-br from-slate-300 to-slate-400"></div>
+                            </div>
+                            <div class="aspect-square bg-slate-200 border border-outline-variant hover:border-secondary transition-all cursor-pointer"
+                                title="Cimentício">
+                                <div class="w-full h-full bg-gradient-to-tr from-slate-400 to-slate-500"></div>
+                            </div>
+                            <div class="aspect-square bg-slate-200 border border-outline-variant hover:border-secondary transition-all cursor-pointer"
+                                title="Acrílico">
+                                <div class="w-full h-full bg-gradient-to-bl from-slate-200 to-slate-300"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Product Grid -->
+            <div class="flex-grow">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <!-- Card 1 -->
+
+                    <div class="bg-surface border border-outline-variant group">
+                        <div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Macro detail of burnt cement texture with subtle industrial grey tones and smooth architectural finish"
+                                src="img/img12.jpg" />
+                            <div class="absolute top-4 right-4">
+                                <span
+                                    class="bg-secondary text-white font-label-caps text-[10px] px-2 py-1 uppercase tracking-widest">ALÊ
+                                    CRILL</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 border-t border-outline-variant">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md">Bian Top Crill</h3>
+                                <span
+                                    class="font-technical-data text-technical-data text-on-surface-variant">CQ-902</span>
+                            </div>
+
+                            <!-- Adicionada ID 'descricao' e removido o mb-6 fixo para o texto fluir -->
+                            <p id="descricao"
+                                class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-2 transition-all duration-300">
+                                Ponte de Aderência: Evita que o chapisco ou reboco "solte" da parede, especialmente em
+                                superfícies lisas como concreto. Adicionalmente, melhora a plasticidade da massa e
+                                garante que o acabamento final não sofra com descolamentos ou bolhas futuras.
+                            </p>
+
+                            <!-- Adicionado ID 'btnDetalhes' e chamada de função no clique -->
+                            <button onclick="toggleCard(this)"
+                                class="w-full py-3 border-2 border-primary-container font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-white transition-all active:translate-y-[0.5px]">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+
+
+                    <!-- Card 2 -->
+
+                    <div class="bg-surface border border-outline-variant group">
+                        <div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Close up of white grafiato wall texture with deep vertical grooves and professional matte finish"
+                                src="img/img11.jpg" />
+                        </div>
+                        <div class="p-6 border-t border-outline-variant">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md">Tinta Látex</h3>
+                                <span
+                                    class="font-technical-data text-technical-data text-on-surface-variant">GF-104</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A tinta látex
+                                (também chamada de látex PVA) é uma das opções mais populares para pintura residencial
+                                no Brasil devido à sua facilidade de uso e baixo odor.</p>
+                            <button
+                                class="w-full py-3 border-2 border-primary-container font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-white transition-all active:translate-y-[0.5px]"
+                                onclick="toggleCard(this)">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="bg-surface border border-outline-variant group">
+                        <div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="High resolution texture of lamato finish with fine grain particles and industrial beige undertones"
+                                src="img/img10.jpg" />
+                        </div>
+                        <div class="p-6 border-t border-outline-variant">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md">Massa Corrida</h3>
+                                <span
+                                    class="font-technical-data text-technical-data text-on-surface-variant">LM-330</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">A massa
+                                corrida é essencial para deixar as paredes lisinhas antes da pintura, mas é importante
+                                escolher o tipo certo para cada ambiente</p>
+                            <button
+                                class="w-full py-3 border-2 border-primary-container font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-white transition-all active:translate-y-[0.5px]"
+                                onclick="toggleCard(this)">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="bg-surface border border-outline-variant group">
+                        <div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Polished marmorato wall finish simulating natural marble with deep veins and high gloss reflection"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfdFW2DNbOhY-mqWrB_WuTkXszBMPoNTViL7WG2oXDd0b1CXQNQJTBfjVE7zfw859ESo1mgz10Vcsi5f51zu9q7w6yeVOkbiAmGi5WYniXxQ7uLdSEP7rjDUaKbHqoYhcDa-16as9a7WJ0LCZ2VnSODBSTHInCU9pyHjU9wS9-r0jiW-HDa7lat8FsHQ-Vw6jjTG99xjsl6upZZfS60222QWXXVkwJQ47lziMvhm1sPnFfW_xrFMn-Rs4e9-nzX85ibQQG9GRsMump" />
+                        </div>
+                        <div class="p-6 border-t border-outline-variant">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md">Marmorato</h3>
+                                <span
+                                    class="font-technical-data text-technical-data text-on-surface-variant">MR-700</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Luxo e brilho
+                                que replicam fielmente as nuances do mármore natural.</p>
+                            <button
+                                class="w-full py-3 border-2 border-primary-container font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-white transition-all active:translate-y-[0.5px]"
+                                onclick="toggleCard(this)">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="bg-surface border border-outline-variant group">
+                        <div class="aspect-[4/5] overflow-hidden bg-surface-container relative">
+                            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                data-alt="Industrial sprayed texture coating on a wall with uniform pattern and shadow play"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCan4r4y2FQDngzmafML3NQf4Sb8W988f8llgQVJqYK7xG8C26TUzHk-nJHek47JjbrGj5W1VN-QvTdXXjf4CKeVf-S643yr2P9XZTCntBll2jZvPjTLgBG-3ehqymNUtwcJaVgd57e_53K2BbD4d7d0WSyijAPjX4Byk97JeeDNyT_GrmHp4HyUaZqxxCBphftOLqmAT7DLMTdADfcMql7kkQFQmgRGM0-erhI7_9ZqWNiswsBYvO7KWV9azmYRLdfoNThmMWSPGej" />
+                        </div>
+                        <div class="p-6 border-t border-outline-variant">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-headline-md text-headline-md">Textura Projetada</h3>
+                                <span
+                                    class="font-technical-data text-technical-data text-on-surface-variant">TP-440</span>
+                            </div>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Aplicação
+                                pneumática para rapidez e uniformidade em grandes áreas.</p>
+                            <button
+                                class="w-full py-3 border-2 border-primary-container font-label-caps text-label-caps uppercase hover:bg-primary-container hover:text-white transition-all active:translate-y-[0.5px]"
+                                onclick="toggleCard(this)">
+                                Ver Detalhes
+                            </button>
+                        </div>
+                    </div>
+
+
+
+
+                    <!-- Card 6: Empty state / Call to Custom -->
+                    <div
+                        class="border-2 border-dashed border-outline-variant flex flex-col items-center justify-center p-12 text-center group cursor-pointer hover:border-secondary transition-colors">
+                        <span
+                            class="material-symbols-outlined text-4xl text-outline mb-4 group-hover:text-secondary">palette</span>
+                        <h3 class="font-headline-md text-headline-md text-outline mb-2 group-hover:text-on-surface">
+                            Cores Customizadas</h3>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Desenvolvemos pigmentações
+                            exclusivas sob demanda para o seu projeto.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Technical Specs Section -->
+        <section class="bg-surface-container-low py-24 border-y-2 border-slate-700">
+            <div class="max-w-7xl mx-auto px-3">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+                    <div>
+                        <span class="font-label-caps text-label-caps text-secondary uppercase block mb-2">Performance
+                            &amp; Dados</span>
+                        <h2 class="font-headline-lg text-headline-lg">Especificações Técnicas Gerais</h2>
+                    </div>
+                    <p class="max-w-md font-body-md text-on-surface-variant">Valores médios baseados em condições padrão
+                        (25°C e 60% URA). Consulte a ficha individual para dados precisos por produto.</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-primary text-white">
+                                <th class="p-4 font-label-caps text-label-caps uppercase tracking-widest">Propriedade
+                                </th>
+                                <th class="p-4 font-label-caps text-label-caps uppercase tracking-widest">Valor Médio
+                                </th>
+                                <th class="p-4 font-label-caps text-label-caps uppercase tracking-widest">Norma Técnica
+                                </th>
+                                <th class="p-4 font-label-caps text-label-caps uppercase tracking-widest">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-technical-data text-technical-data">
+                            <tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+                                <td class="p-4 font-bold text-primary">Tempo de Secagem ao Toque</td>
+                                <td class="p-4">2 a 4 Horas</td>
+                                <td class="p-4 text-on-surface-variant">ABNT NBR 11702</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-green-600"></span> Homologado
+                                </td>
+                            </tr>
+                            <tr
+                                class="border-b border-outline-variant bg-surface-container-lowest/50 hover:bg-surface-container transition-colors">
+                                <td class="p-4 font-bold text-primary">Rendimento (Balde 18L)</td>
+                                <td class="p-4">12m² a 35m² (variável por textura)</td>
+                                <td class="p-4 text-on-surface-variant">ABNT NBR 14942</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-green-600"></span> Homologado
+                                </td>
+                            </tr>
+                            <tr class="border-b border-outline-variant hover:bg-surface-container transition-colors">
+                                <td class="p-4 font-bold text-primary">Diluição Máxima</td>
+                                <td class="p-4">Até 10% com água potável</td>
+                                <td class="p-4 text-on-surface-variant">Uso Industrial</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-secondary"></span> Em Análise
+                                </td>
+                            </tr>
+                            <tr
+                                class="border-b border-outline-variant bg-surface-container-lowest/50 hover:bg-surface-container transition-colors">
+                                <td class="p-4 font-bold text-primary">Resistência UV</td>
+                                <td class="p-4">Alta Estabilidade Cromática</td>
+                                <td class="p-4 text-on-surface-variant">ASTM G154</td>
+                                <td class="p-4 flex items-center gap-2">
+                                    <span class="w-2 h-2 rounded-full bg-green-600"></span> Homologado
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer
+        class="bg-slate-900 dark:bg-black flex flex-col md:flex-row justify-between items-center px-3 py-10 w-full gap-4 border-t-2 border-slate-800">
+        <div class="text-white font-black tracking-widest uppercase font-inter text-[10px]"> <a href="index.html">ALÊ
+                CRILL</a></div>
+        <div class="flex gap-8">
+            <a class="font-inter text-[10px] tracking-widest uppercase font-semibold text-slate-500 hover:text-orange-500 transition-colors"
+                href="#">CERTIFICADO ISO</a>
+
+
+        </div>
+        <p class="font-inter text-[10px] tracking-widest uppercase font-semibold text-slate-500">
+            © 2026 FÁBRICA DE TEXTURA ALÊ CRILL
+        </p>
+
+        <p class="font-inter text-[10px] tracking-widest uppercase font-semibold text-slate-500">
+            Desenvolvido por <a href="https://maudev.com.br" target="_blank"
+                class="hover:text-orange-500 transition-colors" style="font-weight: 900;text-decoration: underline;">
+                Mauricio Honorato</a>
+        </p>
+
+    </footer>
+
+    <script>
+
+        function toggleCard(botao) {
+            // Procura o parágrafo que está no mesmo bloco do botão clicado
+            const texto = botao.parentElement.querySelector('p');
+
+            if (texto.classList.contains('line-clamp-2')) {
+                texto.classList.remove('line-clamp-2');
+                botao.innerText = 'Ver Menos';
+            } else {
+                texto.classList.add('line-clamp-2');
+                botao.innerText = 'Ver Detalhes';
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

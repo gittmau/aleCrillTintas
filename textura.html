@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+        .pressed-effect:active {
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+            transform: translateY(1px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#bdc7dc",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#2d3133",
+                        "on-surface": "#181c1e",
+                        "on-secondary-container": "#6b3500",
+                        "on-primary-fixed": "#121c2c",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-container": "#93a1b3",
+                        "secondary": "#944b00",
+                        "on-tertiary-fixed": "#0f1d2a",
+                        "surface-container-low": "#f1f4f6",
+                        "surface-variant": "#e0e3e5",
+                        "secondary-fixed-dim": "#ffb783",
+                        "background": "#f7fafc",
+                        "secondary-container": "#fe9743",
+                        "on-secondary": "#ffffff",
+                        "inverse-on-surface": "#eef1f3",
+                        "outline": "#75777d",
+                        "on-surface-variant": "#45474c",
+                        "surface-tint": "#555f71",
+                        "on-error": "#ffffff",
+                        "surface": "#f7fafc",
+                        "on-tertiary-fixed-variant": "#3b4857",
+                        "on-primary-fixed-variant": "#3d4759",
+                        "on-background": "#181c1e",
+                        "tertiary-container": "#2a3846",
+                        "on-primary-container": "#96a0b5",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#ebeef0",
+                        "outline-variant": "#c5c6cd",
+                        "tertiary": "#152230",
+                        "secondary-fixed": "#ffdcc5",
+                        "primary-container": "#2d3748",
+                        "primary-fixed": "#d9e3f9",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e5e9eb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f7fafc",
+                        "tertiary-fixed-dim": "#bac8da",
+                        "primary-fixed-dim": "#bdc7dc",
+                        "primary": "#182232",
+                        "on-secondary-fixed": "#301400",
+                        "error": "#ba1a1a",
+                        "on-secondary-fixed-variant": "#703700",
+                        "tertiary-fixed": "#d6e4f7",
+                        "surface-dim": "#d7dadc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "container-max": "1280px",
+                        "gutter": "24px",
+                        "margin": "48px"
+                    },
+                    "fontFamily": {
+                        "technical-data": ["Space Grotesk"],
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Space Grotesk"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "technical-data": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+
+
+<style>
+
+html {
+    scroll-behavior: smooth;
+}
+
+@media(min-width: 768px) {
+    #btnOrcamentoTablet {
+        display: none;
+    }
+}
+
+@media(min-width:1024px){
+#btnOrcamentoTablet {
+    display: inline-block;
+}
+
+#logoNome{
+padding-left: 40px;font-size: 1.5rem !important;}
+
+}
+</style>
+
+
+</head>
+<body class="bg-background text-on-background font-body-md antialiased" id="topo">
+<!-- Top Navigation Bar -->
+<nav class="bg-slate-50 dark:bg-slate-900 flex justify-between items-center w-full px-6 py-6 max-w-full docked full-width top-0 border-b-2 border-slate-800 dark:border-slate-700 sticky z-50">
+<div class="text-1xl font-black tracking-[0.2em] text-slate-900 dark:text-white"><a href="#topo" id="logoNome">ALÊ CRILL tintas</a></div>
+
+<div class="hidden md:flex gap-8 items-center">
+
+<a class="font-inter tracking-tighter uppercase font-bold text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="index.html">INICIO</a>
+<a class="font-inter tracking-tighter uppercase font-bold text-sm text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 pb-1" href="#">DETALHES TEXTURA</a>
+<a class="font-inter tracking-tighter uppercase font-bold text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="index.html#sobre">SOBRE</a>
+<a class="font-inter tracking-tighter uppercase font-bold text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="produtos.html">PRODUTOS</a>
+
+</div>
+<button class="bg-secondary text-on-secondary px-3 py-2 font-inter tracking-tighter uppercase font-bold text-sm hover:bg-secondary-container transition-all active:translate-y-[1px]" id="btnOrcamentoTablet">
+            <a href="https://wa.me/55011997734189" target="_blank" rel="noopener noreferrer">SOLICITAR AMOSTRA</a>
+        </button>
+</nav>
+<main class="max-w-[1280px] mx-auto px-3 py-12">
+<!-- Breadcrumb / Header Section -->
+<div class="mb-12">
+<p class="font-label-caps text-label-caps text-outline uppercase mb-2">ARQUITETURA DE SUPERFÍCIE / TEXTURAS</p>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<h1 class="font-headline-xl text-headline-xl text-primary">Textura</h1>
+<div class="flex items-center gap-4">
+<span class="flex items-center gap-2 font-technical-data text-technical-data bg-surface-container px-3 py-1 border border-outline-variant">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+                        EM PRODUÇÃO
+                    </span>
+<span class="font-technical-data text-technical-data text-outline" title="identificador temporal" style="cursor: pointer;">SKU: CR-TX-2024-01</span><!--identificador temporal, usado para controle de versão ou lote de fabricação.
+-->
+</div>
+</div>
+<div class="w-full h-[2px] bg-slate-800 mt-6"></div>
+</div>
+<!-- Hero Bento Grid Layout -->
+
+<div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-12 gap-8 mb-12">
+
+<!-- Product Image -->
+<div class="md:col-span-8 group relative overflow-hidden border border-outline-variant bg-white">
+<img alt="Technical texture close-up" class="w-full h-[500px] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Macro photography of a brushed grey industrial texture with fine grit and metallic sheen under sharp directional laboratory lighting" src="img/img6.png"/>
+<div class="absolute bottom-0 left-0 bg-primary text-white p-6 max-w-sm">
+<p class="font-label-caps text-label-caps mb-2 opacity-70">DETALHE DA SUPERFÍCIE</p>
+<p class="font-body-md text-body-md">Acabamento microgranulado de engenharia de precisão, projetado para ambientes arquitetônicos de alto tráfego.</p>
+</div>
+</div>
+<!-- Description & Finish -->
+<div class="md:col-span-4 flex flex-col gap-8">
+<div class="bg-surface-container p-8 border border-outline-variant flex-1">
+<h3 class="font-headline-md text-headline-md text-primary mb-4">ACABAMENTO</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                        Textura é um revestimento mineral de alto desempenho. Proporciona uma superfície bruta e tátil que equilibra a robustez industrial com uma estética minimalista sofisticada. Sua ligação química exclusiva garante longevidade tanto em aplicações internas quanto externas.
+                    </p>
+</div>
+<div class="bg-white border border-outline-variant p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-secondary opacity-20 text-6xl">architecture</span>
+</div>
+<h3 class="font-label-caps text-label-caps text-outline mb-4">NOTAS DE ENGENHARIA</h3>
+<ul class="space-y-3 font-technical-data text-technical-data text-primary">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary"></span> COMPOSTO ESTÁVEL AOS RAIOS UV</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary"></span> RESISTENTE A IMPACTOS CLASSE A</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-secondary"></span> ZERO EMISSÃO DE SOLVENTES</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Technical Specs & Application Guide -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t-2 border-slate-800">
+<!-- Technical Specifications Table -->
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">analytics</span>
+<h2 class="font-headline-md text-headline-md text-primary">Especificações Técnicas</h2>
+</div>
+<div class="border border-outline-variant">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-primary text-white">
+<th class="font-label-caps text-label-caps p-4 border-r border-slate-700">PARAMETRO</th>
+<th class="font-label-caps text-label-caps p-4">ESPECIFICAÇÃO</th>
+</tr>
+</thead>
+<tbody class="font-technical-data text-technical-data">
+<tr class="border-b border-outline-variant bg-white">
+<td class="p-4 border-r border-outline-variant text-outline uppercase">Viscosidade</td>
+<td class="p-4 text-primary">12,500 - 14,000 mPa·s</td>
+</tr>
+<tr class="border-b border-outline-variant bg-surface-container-low">
+<td class="p-4 border-r border-outline-variant text-outline uppercase">Densidade</td>
+<td class="p-4 text-primary">1.65 g/cm³ ± 0.05</td>
+</tr>
+<tr class="border-b border-outline-variant bg-white">
+<td class="p-4 border-r border-outline-variant text-outline uppercase">pH Valor</td>
+<td class="p-4 text-primary">8.5 - 9.2 (Alcalina)</td>
+</tr>
+<tr class="border-b border-outline-variant bg-surface-container-low">
+<td class="p-4 border-r border-outline-variant text-outline uppercase">VOC Conteúdo</td>
+<td class="p-4 text-primary">&lt; 1g/L (Regulamento Zero)</td>
+</tr>
+<tr class="bg-white">
+<td class="p-4 border-r border-outline-variant text-outline uppercase">Tempo de secagem</td>
+<td class="p-4 text-primary">4h (Toque) / 24h (Cura completa)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Application Guide -->
+<div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-secondary">precision_manufacturing</span>
+<h2 class="font-headline-md text-headline-md text-primary">Guia de Aplicação</h2>
+</div>
+<div class="space-y-6">
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 border-2 border-slate-800 flex items-center justify-center font-headline-md text-primary group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-colors">01</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-1">PREPARAÇÃO DO SUBSTRATO</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Certifique-se de que a superfície esteja seca, estável e livre de contaminantes. Aplique o primer 'Crill Grip' em superfícies não porosas.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 border-2 border-slate-800 flex items-center justify-center font-headline-md text-primary group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-colors">02</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-1">PROTOCOLO DE MISTURA</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Misture manualmente por 2 minutos. Não utilize misturadores mecânicos de alta velocidade para evitar a entrada de ar na textura.</p>
+</div>
+</div>
+<div class="flex gap-6 group">
+<div class="flex-shrink-0 w-12 h-12 border-2 border-slate-800 flex items-center justify-center font-headline-md text-primary group-hover:bg-secondary group-hover:text-white group-hover:border-secondary transition-colors">03</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-1">EXECUÇÃO</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Aplique com uma espátula de aço inoxidável em camadas finas e uniformes. Finalize com uma desempenadeira para obter a orientação desejada dos veios da madeira.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="mt-20 bg-primary p-12 text-center border-t-4 border-secondary relative">
+<h2 class="font-headline-lg text-headline-lg text-white mb-4">Especifique a Textura para o seu projeto.</h2>
+<p class="font-body-lg text-body-lg text-on-primary-container mb-8 max-w-2xl mx-auto">Para correspondência de cores personalizadas, informações sobre parceiros de distribuição ou para solicitar um kit de amostras físicas para análise arquitetônica, entre em contato com nosso departamento técnico.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-secondary text-on-secondary px-10 py-4 font-label-caps text-label-caps tracking-[0.2em] hover:bg-secondary-container transition-all pressed-effect">
+                    <a href="https://wa.me/55011997734189" target="_blank" rel="noopener noreferrer">SOLICITAR ORÇAMENTO</a>
+                </button>
+<button class="border border-white text-white px-10 py-4 font-label-caps text-label-caps tracking-[0.2em] hover:bg-white hover:text-primary transition-all">
+                    DOWNLOAD DATA SHEET (PDF)
+                </button>
+</div>
+</div>
+</main>
+
+
+<!-- Footer -->
+<footer class="bg-slate-900 dark:bg-black flex flex-col md:flex-row justify-between items-center px-12 py-10 w-full gap-4 border-t-2 border-slate-800">
+<div class="text-white font-black tracking-widest uppercase font-inter text-[10px]"><a href="index.html"> ALÊ CRILL</a></div>
+<div class="flex gap-8">
+<a class="font-inter text-[10px] tracking-widest uppercase font-semibold text-slate-500 hover:text-orange-500 transition-colors" href="#">CERTIFICADO ISO</a>
+
+
+</div>
+<p class="font-inter text-[10px] tracking-widest uppercase font-semibold text-slate-500">
+            © 2026 FÁBRICA DE TEXTURA ALÊ CRILL 
+        </p>
+
+<p class="font-inter text-[10px] tracking-widest uppercase font-semibold text-slate-500">
+            Desenvolvido por <a href="https://maudev.com.br" target="_blank" class="hover:text-orange-500 transition-colors" style="font-weight: 900;text-decoration: underline;"> Mauricio Honorato</a>
+        </p>
+
+</footer>
+</body></html>
