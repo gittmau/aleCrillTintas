@@ -1,127 +1,130 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Especificações técnicas do Textura | ALÊ CRILL </title>
+<meta name="description" content="Textura é um revestimento de alta performance que oferece uma variedade de acabamentos para superfícies arquitetônicas. Com formulações avançadas, Textura proporciona durabilidade, resistência a intempéries e uma estética personalizada para projetos residenciais e comerciais." />
+<meta name="robots" content="index, follow">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link rel="icon" href="img/shortCut.png" type="image/png">        
 <style>
-        body {
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-        }
-        .pressed-effect:active {
-            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
-            transform: translateY(1px);
-        }
-    </style>
+body {
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+.pressed-effect:active {
+box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+transform: translateY(1px);
+}
+</style>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-tertiary": "#ffffff",
-                        "inverse-primary": "#bdc7dc",
-                        "error-container": "#ffdad6",
-                        "inverse-surface": "#2d3133",
-                        "on-surface": "#181c1e",
-                        "on-secondary-container": "#6b3500",
-                        "on-primary-fixed": "#121c2c",
-                        "surface-container-highest": "#e0e3e5",
-                        "on-tertiary-container": "#93a1b3",
-                        "secondary": "#944b00",
-                        "on-tertiary-fixed": "#0f1d2a",
-                        "surface-container-low": "#f1f4f6",
-                        "surface-variant": "#e0e3e5",
-                        "secondary-fixed-dim": "#ffb783",
-                        "background": "#f7fafc",
-                        "secondary-container": "#fe9743",
-                        "on-secondary": "#ffffff",
-                        "inverse-on-surface": "#eef1f3",
-                        "outline": "#75777d",
-                        "on-surface-variant": "#45474c",
-                        "surface-tint": "#555f71",
-                        "on-error": "#ffffff",
-                        "surface": "#f7fafc",
-                        "on-tertiary-fixed-variant": "#3b4857",
-                        "on-primary-fixed-variant": "#3d4759",
-                        "on-background": "#181c1e",
-                        "tertiary-container": "#2a3846",
-                        "on-primary-container": "#96a0b5",
-                        "on-error-container": "#93000a",
-                        "surface-container": "#ebeef0",
-                        "outline-variant": "#c5c6cd",
-                        "tertiary": "#152230",
-                        "secondary-fixed": "#ffdcc5",
-                        "primary-container": "#2d3748",
-                        "primary-fixed": "#d9e3f9",
-                        "on-primary": "#ffffff",
-                        "surface-container-high": "#e5e9eb",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-bright": "#f7fafc",
-                        "tertiary-fixed-dim": "#bac8da",
-                        "primary-fixed-dim": "#bdc7dc",
-                        "primary": "#182232",
-                        "on-secondary-fixed": "#301400",
-                        "error": "#ba1a1a",
-                        "on-secondary-fixed-variant": "#703700",
-                        "tertiary-fixed": "#d6e4f7",
-                        "surface-dim": "#d7dadc"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "unit": "4px",
-                        "container-max": "1280px",
-                        "gutter": "24px",
-                        "margin": "48px"
-                    },
-                    "fontFamily": {
-                        "technical-data": ["Space Grotesk"],
-                        "headline-xl": ["Inter"],
-                        "headline-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "label-caps": ["Space Grotesk"],
-                        "headline-md": ["Inter"]
-                    },
-                    "fontSize": {
-                        "technical-data": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
-                        "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
-                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
-                    }
-                },
-            },
-        }
-    </script>
+tailwind.config = {
+darkMode: "class",
+theme: {
+extend: {
+"colors": {
+"on-tertiary": "#ffffff",
+"inverse-primary": "#bdc7dc",
+"error-container": "#ffdad6",
+"inverse-surface": "#2d3133",
+"on-surface": "#181c1e",
+"on-secondary-container": "#6b3500",
+"on-primary-fixed": "#121c2c",
+"surface-container-highest": "#e0e3e5",
+"on-tertiary-container": "#93a1b3",
+"secondary": "#944b00",
+"on-tertiary-fixed": "#0f1d2a",
+"surface-container-low": "#f1f4f6",
+"surface-variant": "#e0e3e5",
+"secondary-fixed-dim": "#ffb783",
+"background": "#f7fafc",
+"secondary-container": "#fe9743",
+"on-secondary": "#ffffff",
+"inverse-on-surface": "#eef1f3",
+"outline": "#75777d",
+"on-surface-variant": "#45474c",
+"surface-tint": "#555f71",
+"on-error": "#ffffff",
+"surface": "#f7fafc",
+"on-tertiary-fixed-variant": "#3b4857",
+"on-primary-fixed-variant": "#3d4759",
+"on-background": "#181c1e",
+"tertiary-container": "#2a3846",
+"on-primary-container": "#96a0b5",
+"on-error-container": "#93000a",
+"surface-container": "#ebeef0",
+"outline-variant": "#c5c6cd",
+"tertiary": "#152230",
+"secondary-fixed": "#ffdcc5",
+"primary-container": "#2d3748",
+"primary-fixed": "#d9e3f9",
+"on-primary": "#ffffff",
+"surface-container-high": "#e5e9eb",
+"surface-container-lowest": "#ffffff",
+"surface-bright": "#f7fafc",
+"tertiary-fixed-dim": "#bac8da",
+"primary-fixed-dim": "#bdc7dc",
+"primary": "#182232",
+"on-secondary-fixed": "#301400",
+"error": "#ba1a1a",
+"on-secondary-fixed-variant": "#703700",
+"tertiary-fixed": "#d6e4f7",
+"surface-dim": "#d7dadc"
+},
+"borderRadius": {
+"DEFAULT": "0.125rem",
+"lg": "0.25rem",
+"xl": "0.5rem",
+"full": "0.75rem"
+},
+"spacing": {
+"unit": "4px",
+"container-max": "1280px",
+"gutter": "24px",
+"margin": "48px"
+},
+"fontFamily": {
+"technical-data": ["Space Grotesk"],
+"headline-xl": ["Inter"],
+"headline-lg": ["Inter"],
+"body-md": ["Inter"],
+"body-lg": ["Inter"],
+"label-caps": ["Space Grotesk"],
+"headline-md": ["Inter"]
+},
+"fontSize": {
+"technical-data": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}],
+"headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+"headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+"body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+"body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+"label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+"headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+}
+},
+},
+}
+</script>
 
 
 <style>
 
 html {
-    scroll-behavior: smooth;
+scroll-behavior: smooth;
 }
 
 @media(min-width: 768px) {
-    #btnOrcamentoTablet {
-        display: none;
-    }
+#btnOrcamentoTablet {
+display: none;
+}
 }
 
 @media(min-width:1024px){
 #btnOrcamentoTablet {
-    display: inline-block;
+display: inline-block;
 }
 
 #logoNome{
@@ -145,9 +148,9 @@ padding-left: 40px;font-size: 1.5rem !important;}
 <a class="font-inter tracking-tighter uppercase font-bold text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors" href="produtos.html">PRODUTOS</a>
 
 </div>
-<button class="bg-secondary text-on-secondary px-3 py-2 font-inter tracking-tighter uppercase font-bold text-sm hover:bg-secondary-container transition-all active:translate-y-[1px]" id="btnOrcamentoTablet">
-            <a href="https://wa.me/55011997734189" target="_blank" rel="noopener noreferrer">AMOSTRA</a>
-        </button>
+<button class="bg-secondary text-on-secondary px-6 py-2 font-inter tracking-tighter uppercase font-bold text-sm hover:bg-secondary-container transition-all active:translate-y-[1px]" id="btnOrcamentoTablet">
+<a href="https://wa.me/55011997734189" target="_blank" rel="noopener noreferrer"> AMOSTRA</a>
+</button>
 </nav>
 <main class="max-w-[1280px] mx-auto px-3 py-12">
 <!-- Breadcrumb / Header Section -->
@@ -158,8 +161,8 @@ padding-left: 40px;font-size: 1.5rem !important;}
 <div class="flex items-center gap-4">
 <span class="flex items-center gap-2 font-technical-data text-technical-data bg-surface-container px-3 py-1 border border-outline-variant">
 <span class="w-3 h-3 rounded-full bg-secondary"></span>
-                        EM PRODUÇÃO
-                    </span>
+EM PRODUÇÃO
+</span>
 <span class="font-technical-data text-technical-data text-outline" title="identificador temporal" style="cursor: pointer;">SKU: CR-TX-2024-01</span><!--identificador temporal, usado para controle de versão ou lote de fabricação.
 -->
 </div>
@@ -183,8 +186,8 @@ padding-left: 40px;font-size: 1.5rem !important;}
 <div class="bg-surface-container p-8 border border-outline-variant flex-1">
 <h3 class="font-headline-md text-headline-md text-primary mb-4">ACABAMENTO</h3>
 <p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                        Textura é um revestimento mineral de alto desempenho. Proporciona uma superfície bruta e tátil que equilibra a robustez industrial com uma estética minimalista sofisticada. Sua ligação química exclusiva garante longevidade tanto em aplicações internas quanto externas.
-                    </p>
+Textura é um revestimento mineral de alto desempenho. Proporciona uma superfície bruta e tátil que equilibra a robustez industrial com uma estética minimalista sofisticada. Sua ligação química exclusiva garante longevidade tanto em aplicações internas quanto externas.
+</p>
 </div>
 <div class="bg-white border border-outline-variant p-8 relative overflow-hidden">
 <div class="absolute top-0 right-0 p-4">
@@ -277,11 +280,11 @@ padding-left: 40px;font-size: 1.5rem !important;}
 <p class="font-body-lg text-body-lg text-on-primary-container mb-8 max-w-2xl mx-auto">Para correspondência de cores personalizadas, informações sobre parceiros de distribuição ou para solicitar um kit de amostras físicas para análise arquitetônica, entre em contato com nosso departamento técnico.</p>
 <div class="flex flex-col sm:flex-row gap-4 justify-center">
 <button class="bg-secondary text-on-secondary px-10 py-4 font-label-caps text-label-caps tracking-[0.2em] hover:bg-secondary-container transition-all pressed-effect">
-                    <a href="https://wa.me/55011997734189" target="_blank" rel="noopener noreferrer">SOLICITAR ORÇAMENTO</a>
-                </button>
+<a href="https://wa.me/55011997734189" target="_blank" rel="noopener noreferrer">SOLICITAR ORÇAMENTO</a>
+</button>
 <button class="border border-white text-white px-10 py-4 font-label-caps text-label-caps tracking-[0.2em] hover:bg-white hover:text-primary transition-all">
-                    DOWNLOAD DATA SHEET (PDF)
-                </button>
+DOWNLOAD DATA SHEET (PDF)
+</button>
 </div>
 </div>
 </main>
@@ -296,12 +299,12 @@ padding-left: 40px;font-size: 1.5rem !important;}
 
 </div>
 <p class="font-inter text-[10px] tracking-widest uppercase font-semibold text-slate-500">
-            © 2026 FÁBRICA DE TEXTURA ALÊ CRILL 
-        </p>
+© 2026 FÁBRICA DE TEXTURA ALÊ CRILL 
+</p>
 
 <p class="font-inter text-[10px] tracking-widest uppercase font-semibold text-slate-500">
-            Desenvolvido por <a href="https://maudev.com.br" target="_blank" class="hover:text-orange-500 transition-colors" style="font-weight: 900;text-decoration: underline;"> Mauricio Honorato</a>
-        </p>
+Desenvolvido por <a href="https://maudev.com.br" target="_blank" class="hover:text-orange-500 transition-colors" style="font-weight: 900;text-decoration: underline;"> Mauricio Honorato</a>
+</p>
 
 </footer>
 </body></html>
